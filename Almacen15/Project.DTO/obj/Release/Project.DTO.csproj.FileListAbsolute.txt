@@ -1,0 +1,9 @@
+C:\Users\Dell\Desktop\Almacen15\Project.DTO\bin\Release\Project.DTO.dll.config
+C:\Users\Dell\Desktop\Almacen15\Project.DTO\bin\Release\Project.DTO.dll
+C:\Users\Dell\Desktop\Almacen15\Project.DTO\bin\Release\Project.DTO.pdb
+C:\Users\Dell\Desktop\Almacen15\Project.DTO\bin\Release\EntityFramework.dll
+C:\Users\Dell\Desktop\Almacen15\Project.DTO\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Dell\Desktop\Almacen15\Project.DTO\bin\Release\EntityFramework.xml
+C:\Users\Dell\Desktop\Almacen15\Project.DTO\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Dell\Desktop\Almacen15\Project.DTO\obj\Release\Project.DTO.dll
+C:\Users\Dell\Desktop\Almacen15\Project.DTO\obj\Release\Project.DTO.pdb

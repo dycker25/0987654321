@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C861A2D-3B84-4E91-A385-5BD1C5FC3E32}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>almacen_telar</RootNamespace>
+    <AssemblyName>almacen_telar</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="administradorView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="administradorView.Designer.cs">
+      <DependentUpon>administradorView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ayuda.cs" />
+    <Compile Include="bodegaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bodegaView.Designer.cs">
+      <DependentUpon>bodegaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="bordadoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="bordadoView.Designer.cs">
+      <DependentUpon>bordadoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="cantidadView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cantidadView.Designer.cs">
+      <DependentUpon>cantidadView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="controller\AdministradorCon.cs" />
+    <Compile Include="controller\BordadoCon.cs" />
+    <Compile Include="controller\BodegaCon.cs" />
+    <Compile Include="controller\ConexionBD.cs" />
+    <Compile Include="controller\CorteCon.cs" />
+    <Compile Include="controller\DiseñoCon.cs" />
+    <Compile Include="controller\LavanderiaCon.cs" />
+    <Compile Include="controller\Login.cs" />
+    <Compile Include="controller\MaquilaCon.cs" />
+    <Compile Include="controller\TerminadoCon.cs" />
+    <Compile Include="controller\VentaCon.cs" />
+    <Compile Include="corteView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="corteView.Designer.cs">
+      <DependentUpon>corteView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fotosView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fotosView.Designer.cs">
+      <DependentUpon>fotosView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Imagen.cs" />
+    <Compile Include="loginView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginView.Designer.cs">
+      <DependentUpon>loginView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="inicioView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inicioView.Designer.cs">
+      <DependentUpon>inicioView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lavanderiaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="lavanderiaView.Designer.cs">
+      <DependentUpon>lavanderiaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="maquilaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maquilaView.Designer.cs">
+      <DependentUpon>maquilaView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ob\BodegaDTO.cs" />
+    <Compile Include="Ob\BordadoDTO.cs" />
+    <Compile Include="Ob\VentaDTO.cs" />
+    <Compile Include="Ob\CorteDTO.cs" />
+    <Compile Include="Ob\DetallesDTO.cs" />
+    <Compile Include="Ob\DetalleVentaDTO.cs" />
+    <Compile Include="Ob\DiseñoDTO.cs" />
+    <Compile Include="Ob\LavanderiaDTO.cs" />
+    <Compile Include="Ob\LugarEntregaDTO.cs" />
+    <Compile Include="Ob\MaquilaDTO.cs" />
+    <Compile Include="Ob\TallaDTO.cs" />
+    <Compile Include="Ob\TerminadoDTO.cs" />
+    <Compile Include="Ob\UsuarioDTO.cs" />
+    <Compile Include="pantalonView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pantalonView.Designer.cs">
+      <DependentUpon>pantalonView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Config.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Resources\Config.Designer.cs">
+      <DependentUpon>Config.cs</DependentUpon>
+    </Compile>
+    <Compile Include="terminadoView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="terminadoView.Designer.cs">
+      <DependentUpon>terminadoView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ventaView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ventaView.Designer.cs">
+      <DependentUpon>ventaView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="administradorView.resx">
+      <DependentUpon>administradorView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bodegaView.resx">
+      <DependentUpon>bodegaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="bordadoView.resx">
+      <DependentUpon>bordadoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cantidadView.resx">
+      <DependentUpon>cantidadView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fotosView.resx">
+      <DependentUpon>fotosView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lavanderiaView.resx">
+      <DependentUpon>lavanderiaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="maquilaView.resx">
+      <DependentUpon>maquilaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pantalonView.resx">
+      <DependentUpon>pantalonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Config.resx">
+      <DependentUpon>Config.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="terminadoView.resx">
+      <DependentUpon>terminadoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ventaView.resx">
+      <DependentUpon>ventaView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="corteView.resx">
+      <DependentUpon>corteView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginView.resx">
+      <DependentUpon>loginView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inicioView.resx">
+      <DependentUpon>inicioView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Ob\ResultadDTO.cs" />
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loginfondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnentrar1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fondolavados.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ayuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Project.BL\Project.BL.csproj">
+      <Project>{5619224d-4e98-4a3b-998a-64e5b202ccdf}</Project>
+      <Name>Project.BL</Name>
+    </ProjectReference>
+    <ProjectReference Include="Project.DTO\Project.DTO.csproj">
+      <Project>{f09a302a-d141-4cb4-802f-96cfa6c9e55b}</Project>
+      <Name>Project.DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

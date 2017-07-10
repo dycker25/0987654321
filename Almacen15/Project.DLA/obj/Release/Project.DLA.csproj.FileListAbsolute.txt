@@ -1,0 +1,12 @@
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\bin\Release\Project.DLA.dll.config
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\bin\Release\Project.DLA.dll
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\bin\Release\Project.DLA.pdb
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\bin\Release\EntityFramework.dll
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\bin\Release\Project.DTO.dll
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\bin\Release\Project.DTO.pdb
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\bin\Release\EntityFramework.xml
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\obj\Release\Project.DLA.csprojResolveAssemblyReference.cache
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\obj\Release\Project.DLA.dll
+C:\Users\Dell\Desktop\Almacen15\Project.DLA\obj\Release\Project.DLA.pdb

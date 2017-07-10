@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AlmacenModeloStoreContainer" CdmEntityContainer="AlmacenEntities">
+    <EntitySetMapping Name="LugarEntregas">
+      <EntityTypeMapping TypeName="AlmacenModelo.LugarEntrega">
+        <MappingFragment StoreEntitySet="LugarEntrega">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Procesoes">
+      <EntityTypeMapping TypeName="AlmacenModelo.Proceso">
+        <MappingFragment StoreEntitySet="Proceso">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bodegas">
+      <EntityTypeMapping TypeName="AlmacenModelo.Bodega">
+        <MappingFragment StoreEntitySet="Bodega">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BodegaPantalons">
+      <EntityTypeMapping TypeName="AlmacenModelo.BodegaPantalon">
+        <MappingFragment StoreEntitySet="BodegaPantalon">
+          <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
+          <ScalarProperty Name="IdPantalon" ColumnName="IdPantalon" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bordadoes">
+      <EntityTypeMapping TypeName="AlmacenModelo.Bordado">
+        <MappingFragment StoreEntitySet="Bordado">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdPrenda" ColumnName="IdPrenda" />
+          <ScalarProperty Name="FechaTerminado" ColumnName="FechaTerminado" />
+          <ScalarProperty Name="FechaInicio" ColumnName="FechaInicio" />
+          <ScalarProperty Name="ParteBordada" ColumnName="ParteBordada" />
+          <ScalarProperty Name="NumeroPuntadas" ColumnName="NumeroPuntadas" />
+          <ScalarProperty Name="NumeroPiezas" ColumnName="NumeroPiezas" />
+          <ScalarProperty Name="IdBordado" ColumnName="IdBordado" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cometarios">
+      <EntityTypeMapping TypeName="AlmacenModelo.Cometario">
+        <MappingFragment StoreEntitySet="Cometario">
+          <ScalarProperty Name="IdTerminado" ColumnName="IdTerminado" />
+          <ScalarProperty Name="Cometario1" ColumnName="Cometario" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cortes">
+      <EntityTypeMapping TypeName="AlmacenModelo.Corte">
+        <MappingFragment StoreEntitySet="Corte">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdPrenda" ColumnName="IdPrenda" />
+          <ScalarProperty Name="Piezas" ColumnName="Piezas" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaEntrada" ColumnName="FechaEntrada" />
+          <ScalarProperty Name="IdCorte" ColumnName="IdCorte" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detalles">
+      <EntityTypeMapping TypeName="AlmacenModelo.Detalle">
+        <MappingFragment StoreEntitySet="Detalles">
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="IdTalla" ColumnName="IdTalla" />
+          <ScalarProperty Name="IdPrenda" ColumnName="IdPrenda" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DetalleVentas">
+      <EntityTypeMapping TypeName="AlmacenModelo.DetalleVenta">
+        <MappingFragment StoreEntitySet="DetalleVenta">
+          <ScalarProperty Name="IdVenta" ColumnName="IdVenta" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Talla" ColumnName="Talla" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diseño">
+      <EntityTypeMapping TypeName="AlmacenModelo.Diseño">
+        <MappingFragment StoreEntitySet="Diseño">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Imagen" ColumnName="Imagen" />
+          <ScalarProperty Name="FechaAprovado" ColumnName="FechaAprovado" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Corte" ColumnName="Corte" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lavanderias">
+      <EntityTypeMapping TypeName="AlmacenModelo.Lavanderia">
+        <MappingFragment StoreEntitySet="Lavanderia">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdPrenda" ColumnName="IdPrenda" />
+          <ScalarProperty Name="IdProceso" ColumnName="IdProceso" />
+          <ScalarProperty Name="NumeroPiezas" ColumnName="NumeroPiezas" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaRecepcion" ColumnName="FechaRecepcion" />
+          <ScalarProperty Name="IdLavanderia" ColumnName="IdLavanderia" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Maquilas">
+      <EntityTypeMapping TypeName="AlmacenModelo.Maquila">
+        <MappingFragment StoreEntitySet="Maquila">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdPrenda" ColumnName="IdPrenda" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdLugarEntrega" ColumnName="IdLugarEntrega" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FechaResepcion" ColumnName="FechaResepcion" />
+          <ScalarProperty Name="IdMaquila" ColumnName="IdMaquila" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pantalons">
+      <EntityTypeMapping TypeName="AlmacenModelo.Pantalon">
+        <MappingFragment StoreEntitySet="Pantalon">
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="IdDiseño" ColumnName="IdDiseño" />
+          <ScalarProperty Name="IdTalla" ColumnName="IdTalla" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permisoes">
+      <EntityTypeMapping TypeName="AlmacenModelo.Permiso">
+        <MappingFragment StoreEntitySet="Permiso">
+          <ScalarProperty Name="Venta" ColumnName="Venta" />
+          <ScalarProperty Name="Almacen" ColumnName="Almacen" />
+          <ScalarProperty Name="Terminado" ColumnName="Terminado" />
+          <ScalarProperty Name="Lavanderia" ColumnName="Lavanderia" />
+          <ScalarProperty Name="Maquila" ColumnName="Maquila" />
+          <ScalarProperty Name="Bordado" ColumnName="Bordado" />
+          <ScalarProperty Name="Corte" ColumnName="Corte" />
+          <ScalarProperty Name="Admin" ColumnName="Admin" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Prendas">
+      <EntityTypeMapping TypeName="AlmacenModelo.Prenda">
+        <MappingFragment StoreEntitySet="Prenda">
+          <ScalarProperty Name="IdDiseño" ColumnName="IdDiseño" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tallas">
+      <EntityTypeMapping TypeName="AlmacenModelo.Talla">
+        <MappingFragment StoreEntitySet="Talla">
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="Talla1" ColumnName="Talla" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TermiandoBodegas">
+      <EntityTypeMapping TypeName="AlmacenModelo.TermiandoBodega">
+        <MappingFragment StoreEntitySet="TermiandoBodega">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+          <ScalarProperty Name="IdBodega" ColumnName="IdBodega" />
+          <ScalarProperty Name="IdTerminado" ColumnName="IdTerminado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Terminadoes">
+      <EntityTypeMapping TypeName="AlmacenModelo.Terminado">
+        <MappingFragment StoreEntitySet="Terminado">
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdPrenda" ColumnName="IdPrenda" />
+          <ScalarProperty Name="NumeroPiezas" ColumnName="NumeroPiezas" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="FdechaResepcion" ColumnName="FdechaResepcion" />
+          <ScalarProperty Name="IdTerminado" ColumnName="IdTerminado" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="AlmacenModelo.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="IdPermisos" ColumnName="IdPermisos" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendedors">
+      <EntityTypeMapping TypeName="AlmacenModelo.Vendedor">
+        <MappingFragment StoreEntitySet="Vendedor">
+          <ScalarProperty Name="Activo" ColumnName="Activo" />
+          <ScalarProperty Name="Correo" ColumnName="Correo" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ventas">
+      <EntityTypeMapping TypeName="AlmacenModelo.Venta">
+        <MappingFragment StoreEntitySet="Venta">
+          <ScalarProperty Name="IdUsuario" ColumnName="IdUsuario" />
+          <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+          <ScalarProperty Name="PiezasDevueltas" ColumnName="PiezasDevueltas" />
+          <ScalarProperty Name="PiezasVendidas" ColumnName="PiezasVendidas" />
+          <ScalarProperty Name="PiezasEntregas" ColumnName="PiezasEntregas" />
+          <ScalarProperty Name="FechaEntrega" ColumnName="FechaEntrega" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

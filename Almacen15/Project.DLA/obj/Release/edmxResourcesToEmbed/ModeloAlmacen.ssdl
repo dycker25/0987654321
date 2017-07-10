@@ -1,0 +1,668 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AlmacenModelo.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="LugarEntrega">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="50" />
+    <Property Name="Telefono" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Proceso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Descripcion" Type="varchar" MaxLength="100" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bodega">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="IdUsuario" Type="smallint" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BodegaPantalon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPantalon" Type="smallint" Nullable="false" />
+    <Property Name="IdBodega" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bordado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdBordado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="NumeroPiezas" Type="int" Nullable="false" />
+    <Property Name="NumeroPuntadas" Type="int" Nullable="false" />
+    <Property Name="ParteBordada" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaInicio" Type="datetime" Nullable="false" />
+    <Property Name="FechaTerminado" Type="datetime" />
+    <Property Name="IdPrenda" Type="smallint" Nullable="false" />
+    <Property Name="IdUsuario" Type="smallint" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Cometario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Cometario" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="IdTerminado" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Corte">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdCorte" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="FechaEntrada" Type="datetime" Nullable="false" />
+    <Property Name="FechaEntrega" Type="datetime" />
+    <Property Name="Piezas" Type="int" Nullable="false" />
+    <Property Name="IdPrenda" Type="smallint" Nullable="false" />
+    <Property Name="IdUsuario" Type="smallint" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Detalles">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdPrenda" Type="smallint" Nullable="false" />
+    <Property Name="IdTalla" Type="int" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DetalleVenta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Talla" Type="float" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="IdVenta" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Diseño">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Codigo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Corte" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Modelo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaAprovado" Type="date" Nullable="false" />
+    <Property Name="Imagen" Type="image" Nullable="false" />
+    <Property Name="IdUsuario" Type="smallint" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lavanderia">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdLavanderia" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaRecepcion" Type="datetime" Nullable="false" />
+    <Property Name="FechaEntrega" Type="datetime" />
+    <Property Name="NumeroPiezas" Type="int" Nullable="false" />
+    <Property Name="IdProceso" Type="smallint" Nullable="false" />
+    <Property Name="IdPrenda" Type="smallint" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+    <Property Name="IdUsuario" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Maquila">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdMaquila" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FechaResepcion" Type="datetime" Nullable="false" />
+    <Property Name="FechaEntrega" Type="datetime" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="IdLugarEntrega" Type="smallint" Nullable="false" />
+    <Property Name="IdUsuario" Type="smallint" Nullable="false" />
+    <Property Name="IdPrenda" Type="smallint" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pantalon">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTalla" Type="int" Nullable="false" />
+    <Property Name="IdDiseño" Type="smallint" Nullable="false" />
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Permiso">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Admin" Type="bit" Nullable="false" />
+    <Property Name="Corte" Type="bit" Nullable="false" />
+    <Property Name="Bordado" Type="bit" Nullable="false" />
+    <Property Name="Maquila" Type="bit" Nullable="false" />
+    <Property Name="Lavanderia" Type="bit" Nullable="false" />
+    <Property Name="Terminado" Type="bit" Nullable="false" />
+    <Property Name="Almacen" Type="bit" Nullable="false" />
+    <Property Name="Venta" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Prenda">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdDiseño" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Talla">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Talla" Type="float" Nullable="false" />
+    <Property Name="activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TermiandoBodega">
+    <Key>
+      <PropertyRef Name="IdTerminado" />
+    </Key>
+    <Property Name="IdTerminado" Type="smallint" Nullable="false" />
+    <Property Name="IdBodega" Type="smallint" Nullable="false" />
+    <Property Name="Fecha" Type="datetime" Nullable="false" />
+    <Property Name="IdUsuario" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Terminado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTerminado" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="FdechaResepcion" Type="datetime" Nullable="false" />
+    <Property Name="FechaEntrega" Type="datetime" />
+    <Property Name="NumeroPiezas" Type="int" Nullable="false" />
+    <Property Name="IdPrenda" Type="smallint" Nullable="false" />
+    <Property Name="IdUsuario" Type="smallint" Nullable="false" />
+    <Property Name="Estado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Usuario" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="contrasena" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="IdPermisos" Type="smallint" Nullable="false" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendedor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nchar" MaxLength="150" Nullable="false" />
+    <Property Name="Direccion" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="Telefono" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Correo" Type="varchar" MaxLength="50" />
+    <Property Name="Activo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Venta">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaEntrega" Type="datetime" Nullable="false" />
+    <Property Name="PiezasEntregas" Type="int" Nullable="false" />
+    <Property Name="PiezasVendidas" Type="int" Nullable="false" />
+    <Property Name="PiezasDevueltas" Type="int" />
+    <Property Name="IdCliente" Type="smallint" Nullable="false" />
+    <Property Name="IdUsuario" Type="smallint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Bodega_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Bodega" Type="Self.Bodega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bodega">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BodegaPrenda_Bodega">
+    <End Role="Bodega" Type="Self.Bodega" Multiplicity="1" />
+    <End Role="BodegaPantalon" Type="Self.BodegaPantalon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bodega">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BodegaPantalon">
+        <PropertyRef Name="IdBodega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BodegaPrenda_Prenda">
+    <End Role="Pantalon" Type="Self.Pantalon" Multiplicity="1" />
+    <End Role="BodegaPantalon" Type="Self.BodegaPantalon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pantalon">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BodegaPantalon">
+        <PropertyRef Name="IdPantalon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bordado_Prenda">
+    <End Role="Prenda" Type="Self.Prenda" Multiplicity="1" />
+    <End Role="Bordado" Type="Self.Bordado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prenda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bordado">
+        <PropertyRef Name="IdPrenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bordado_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Bordado" Type="Self.Bordado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Bordado">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cometario_Terminado">
+    <End Role="Terminado" Type="Self.Terminado" Multiplicity="1" />
+    <End Role="Cometario" Type="Self.Cometario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Terminado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cometario">
+        <PropertyRef Name="IdTerminado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Corte_Prenda">
+    <End Role="Prenda" Type="Self.Prenda" Multiplicity="1" />
+    <End Role="Corte" Type="Self.Corte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prenda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Corte">
+        <PropertyRef Name="IdPrenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Corte_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Corte" Type="Self.Corte" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Corte">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Detalles_Prenda">
+    <End Role="Prenda" Type="Self.Prenda" Multiplicity="1" />
+    <End Role="Detalles" Type="Self.Detalles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prenda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Detalles">
+        <PropertyRef Name="IdPrenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DetallesVenta_Ventas">
+    <End Role="Venta" Type="Self.Venta" Multiplicity="1" />
+    <End Role="DetalleVenta" Type="Self.DetalleVenta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Venta">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DetalleVenta">
+        <PropertyRef Name="IdVenta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Diseño_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Diseño" Type="Self.Diseño" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Diseño">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lavanderia_Prenda">
+    <End Role="Prenda" Type="Self.Prenda" Multiplicity="1" />
+    <End Role="Lavanderia" Type="Self.Lavanderia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prenda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lavanderia">
+        <PropertyRef Name="IdPrenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lavanderia_Proceso">
+    <End Role="Proceso" Type="Self.Proceso" Multiplicity="1" />
+    <End Role="Lavanderia" Type="Self.Lavanderia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Proceso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lavanderia">
+        <PropertyRef Name="IdProceso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lavanderia_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Lavanderia" Type="Self.Lavanderia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Lavanderia">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Maquila_LugarEntrega">
+    <End Role="LugarEntrega" Type="Self.LugarEntrega" Multiplicity="1" />
+    <End Role="Maquila" Type="Self.Maquila" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LugarEntrega">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Maquila">
+        <PropertyRef Name="IdLugarEntrega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Maquila_Prenda">
+    <End Role="Prenda" Type="Self.Prenda" Multiplicity="1" />
+    <End Role="Maquila" Type="Self.Maquila" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prenda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Maquila">
+        <PropertyRef Name="IdPrenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Maquila_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Maquila" Type="Self.Maquila" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Maquila">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prenda_Diseño">
+    <End Role="Diseño" Type="Self.Diseño" Multiplicity="1" />
+    <End Role="Pantalon" Type="Self.Pantalon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diseño">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pantalon">
+        <PropertyRef Name="IdDiseño" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Prenda_Talla">
+    <End Role="Talla" Type="Self.Talla" Multiplicity="1" />
+    <End Role="Pantalon" Type="Self.Pantalon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Talla">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pantalon">
+        <PropertyRef Name="IdTalla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TermiandoBodega_Bodega1">
+    <End Role="Bodega" Type="Self.Bodega" Multiplicity="1" />
+    <End Role="TermiandoBodega" Type="Self.TermiandoBodega" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bodega">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TermiandoBodega">
+        <PropertyRef Name="IdBodega" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TermiandoBodega_Terminado">
+    <End Role="Terminado" Type="Self.Terminado" Multiplicity="1" />
+    <End Role="TermiandoBodega" Type="Self.TermiandoBodega" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Terminado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TermiandoBodega">
+        <PropertyRef Name="IdTerminado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Terminado_Prenda">
+    <End Role="Prenda" Type="Self.Prenda" Multiplicity="1" />
+    <End Role="Terminado" Type="Self.Terminado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Prenda">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Terminado">
+        <PropertyRef Name="IdPrenda" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Terminado_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Terminado" Type="Self.Terminado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Terminado">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Usuario_Permiso">
+    <End Role="Permiso" Type="Self.Permiso" Multiplicity="1" />
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permiso">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="IdPermisos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Venta_Usuario">
+    <End Role="Usuario" Type="Self.Usuario" Multiplicity="1" />
+    <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="IdUsuario" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Venta_Vendedor">
+    <End Role="Vendedor" Type="Self.Vendedor" Multiplicity="1" />
+    <End Role="Venta" Type="Self.Venta" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendedor">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Venta">
+        <PropertyRef Name="IdCliente" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="AlmacenModeloStoreContainer">
+    <EntitySet Name="LugarEntrega" EntityType="Self.LugarEntrega" Schema="Catalogo" store:Type="Tables" />
+    <EntitySet Name="Proceso" EntityType="Self.Proceso" Schema="Catalogo" store:Type="Tables" />
+    <EntitySet Name="Bodega" EntityType="Self.Bodega" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BodegaPantalon" EntityType="Self.BodegaPantalon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bordado" EntityType="Self.Bordado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cometario" EntityType="Self.Cometario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Corte" EntityType="Self.Corte" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Detalles" EntityType="Self.Detalles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DetalleVenta" EntityType="Self.DetalleVenta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diseño" EntityType="Self.Diseño" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lavanderia" EntityType="Self.Lavanderia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Maquila" EntityType="Self.Maquila" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pantalon" EntityType="Self.Pantalon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Permiso" EntityType="Self.Permiso" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Prenda" EntityType="Self.Prenda" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Talla" EntityType="Self.Talla" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TermiandoBodega" EntityType="Self.TermiandoBodega" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Terminado" EntityType="Self.Terminado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Vendedor" EntityType="Self.Vendedor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Venta" EntityType="Self.Venta" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Bodega_Usuario" Association="Self.FK_Bodega_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Bodega" EntitySet="Bodega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BodegaPrenda_Bodega" Association="Self.FK_BodegaPrenda_Bodega">
+      <End Role="Bodega" EntitySet="Bodega" />
+      <End Role="BodegaPantalon" EntitySet="BodegaPantalon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BodegaPrenda_Prenda" Association="Self.FK_BodegaPrenda_Prenda">
+      <End Role="Pantalon" EntitySet="Pantalon" />
+      <End Role="BodegaPantalon" EntitySet="BodegaPantalon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bordado_Prenda" Association="Self.FK_Bordado_Prenda">
+      <End Role="Prenda" EntitySet="Prenda" />
+      <End Role="Bordado" EntitySet="Bordado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bordado_Usuario" Association="Self.FK_Bordado_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Bordado" EntitySet="Bordado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cometario_Terminado" Association="Self.FK_Cometario_Terminado">
+      <End Role="Terminado" EntitySet="Terminado" />
+      <End Role="Cometario" EntitySet="Cometario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Corte_Prenda" Association="Self.FK_Corte_Prenda">
+      <End Role="Prenda" EntitySet="Prenda" />
+      <End Role="Corte" EntitySet="Corte" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Corte_Usuario" Association="Self.FK_Corte_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Corte" EntitySet="Corte" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Detalles_Prenda" Association="Self.FK_Detalles_Prenda">
+      <End Role="Prenda" EntitySet="Prenda" />
+      <End Role="Detalles" EntitySet="Detalles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DetallesVenta_Ventas" Association="Self.FK_DetallesVenta_Ventas">
+      <End Role="Venta" EntitySet="Venta" />
+      <End Role="DetalleVenta" EntitySet="DetalleVenta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Diseño_Usuario" Association="Self.FK_Diseño_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Diseño" EntitySet="Diseño" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lavanderia_Prenda" Association="Self.FK_Lavanderia_Prenda">
+      <End Role="Prenda" EntitySet="Prenda" />
+      <End Role="Lavanderia" EntitySet="Lavanderia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lavanderia_Proceso" Association="Self.FK_Lavanderia_Proceso">
+      <End Role="Proceso" EntitySet="Proceso" />
+      <End Role="Lavanderia" EntitySet="Lavanderia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lavanderia_Usuario" Association="Self.FK_Lavanderia_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Lavanderia" EntitySet="Lavanderia" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Maquila_LugarEntrega" Association="Self.FK_Maquila_LugarEntrega">
+      <End Role="LugarEntrega" EntitySet="LugarEntrega" />
+      <End Role="Maquila" EntitySet="Maquila" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Maquila_Prenda" Association="Self.FK_Maquila_Prenda">
+      <End Role="Prenda" EntitySet="Prenda" />
+      <End Role="Maquila" EntitySet="Maquila" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Maquila_Usuario" Association="Self.FK_Maquila_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Maquila" EntitySet="Maquila" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prenda_Diseño" Association="Self.FK_Prenda_Diseño">
+      <End Role="Diseño" EntitySet="Diseño" />
+      <End Role="Pantalon" EntitySet="Pantalon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Prenda_Talla" Association="Self.FK_Prenda_Talla">
+      <End Role="Talla" EntitySet="Talla" />
+      <End Role="Pantalon" EntitySet="Pantalon" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TermiandoBodega_Bodega1" Association="Self.FK_TermiandoBodega_Bodega1">
+      <End Role="Bodega" EntitySet="Bodega" />
+      <End Role="TermiandoBodega" EntitySet="TermiandoBodega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TermiandoBodega_Terminado" Association="Self.FK_TermiandoBodega_Terminado">
+      <End Role="Terminado" EntitySet="Terminado" />
+      <End Role="TermiandoBodega" EntitySet="TermiandoBodega" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Terminado_Prenda" Association="Self.FK_Terminado_Prenda">
+      <End Role="Prenda" EntitySet="Prenda" />
+      <End Role="Terminado" EntitySet="Terminado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Terminado_Usuario" Association="Self.FK_Terminado_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Terminado" EntitySet="Terminado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Usuario_Permiso" Association="Self.FK_Usuario_Permiso">
+      <End Role="Permiso" EntitySet="Permiso" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Venta_Usuario" Association="Self.FK_Venta_Usuario">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Venta_Vendedor" Association="Self.FK_Venta_Vendedor">
+      <End Role="Vendedor" EntitySet="Vendedor" />
+      <End Role="Venta" EntitySet="Venta" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,11 @@
+C:\Users\Dell\Desktop\Almacen15\Project.BL\bin\Release\Project.BL.dll
+C:\Users\Dell\Desktop\Almacen15\Project.BL\bin\Release\Project.BL.pdb
+C:\Users\Dell\Desktop\Almacen15\Project.BL\bin\Release\Project.DLA.dll
+C:\Users\Dell\Desktop\Almacen15\Project.BL\bin\Release\Project.DTO.dll
+C:\Users\Dell\Desktop\Almacen15\Project.BL\bin\Release\EntityFramework.dll
+C:\Users\Dell\Desktop\Almacen15\Project.BL\bin\Release\Project.DLA.pdb
+C:\Users\Dell\Desktop\Almacen15\Project.BL\bin\Release\Project.DTO.pdb
+C:\Users\Dell\Desktop\Almacen15\Project.BL\bin\Release\EntityFramework.xml
+C:\Users\Dell\Desktop\Almacen15\Project.BL\obj\Release\Project.BL.csprojResolveAssemblyReference.cache
+C:\Users\Dell\Desktop\Almacen15\Project.BL\obj\Release\Project.BL.dll
+C:\Users\Dell\Desktop\Almacen15\Project.BL\obj\Release\Project.BL.pdb

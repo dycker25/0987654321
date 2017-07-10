@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="398163219db74735b5584aeb077749dc" Name="Diagram1" ZoomLevel="88">
+        <EntityTypeShape EntityType="AlmacenModelo.LugarEntrega" Width="1.5" PointX="6" PointY="37.5" />
+        <EntityTypeShape EntityType="AlmacenModelo.Proceso" Width="1.5" PointX="6" PointY="2.25" />
+        <EntityTypeShape EntityType="AlmacenModelo.Bodega" Width="1.5" PointX="5.25" PointY="42.875" />
+        <EntityTypeShape EntityType="AlmacenModelo.BodegaPantalon" Width="1.5" PointX="9.75" PointY="37.375" />
+        <EntityTypeShape EntityType="AlmacenModelo.Bordado" Width="1.5" PointX="5.25" PointY="16.875" />
+        <EntityTypeShape EntityType="AlmacenModelo.Cometario" Width="1.5" PointX="7.5" PointY="25.625" />
+        <EntityTypeShape EntityType="AlmacenModelo.Corte" Width="1.5" PointX="8.25" PointY="17.125" />
+        <EntityTypeShape EntityType="AlmacenModelo.Detalle" Width="1.5" PointX="8.25" PointY="6.25" />
+        <EntityTypeShape EntityType="AlmacenModelo.DetalleVenta" Width="1.5" PointX="7.5" PointY="9.5" />
+        <EntityTypeShape EntityType="AlmacenModelo.Diseño" Width="1.5" PointX="5.25" PointY="31.125" />
+        <EntityTypeShape EntityType="AlmacenModelo.Lavanderia" Width="1.5" PointX="8.25" PointY="12.875" />
+        <EntityTypeShape EntityType="AlmacenModelo.Maquila" Width="1.5" PointX="8.25" PointY="20.875" />
+        <EntityTypeShape EntityType="AlmacenModelo.Pantalon" Width="1.5" PointX="7.5" PointY="31.375" />
+        <EntityTypeShape EntityType="AlmacenModelo.Permiso" Width="1.5" PointX="0.75" PointY="17.125" />
+        <EntityTypeShape EntityType="AlmacenModelo.Prenda" Width="1.5" PointX="1.875" PointY="6.125" />
+        <EntityTypeShape EntityType="AlmacenModelo.Talla" Width="1.5" PointX="5.25" PointY="27.625" />
+        <EntityTypeShape EntityType="AlmacenModelo.TermiandoBodega" Width="1.5" PointX="7.5" PointY="34.5" />
+        <EntityTypeShape EntityType="AlmacenModelo.Terminado" Width="1.5" PointX="5.25" PointY="21.875" />
+        <EntityTypeShape EntityType="AlmacenModelo.Usuario" Width="1.5" PointX="3" PointY="16.625" />
+        <EntityTypeShape EntityType="AlmacenModelo.Vendedor" Width="1.5" PointX="3" PointY="13.375" />
+        <EntityTypeShape EntityType="AlmacenModelo.Venta" Width="1.5" PointX="5.25" PointY="13.125" />
+        <AssociationConnector Association="AlmacenModelo.FK_Maquila_LugarEntrega" />
+        <AssociationConnector Association="AlmacenModelo.FK_Lavanderia_Proceso" />
+        <AssociationConnector Association="AlmacenModelo.FK_Bodega_Usuario" />
+        <AssociationConnector Association="AlmacenModelo.FK_BodegaPrenda_Bodega" />
+        <AssociationConnector Association="AlmacenModelo.FK_TermiandoBodega_Bodega1" />
+        <AssociationConnector Association="AlmacenModelo.FK_BodegaPrenda_Prenda" />
+        <AssociationConnector Association="AlmacenModelo.FK_Bordado_Prenda" />
+        <AssociationConnector Association="AlmacenModelo.FK_Bordado_Usuario" />
+        <AssociationConnector Association="AlmacenModelo.FK_Cometario_Terminado" />
+        <AssociationConnector Association="AlmacenModelo.FK_Corte_Prenda" />
+        <AssociationConnector Association="AlmacenModelo.FK_Corte_Usuario" />
+        <AssociationConnector Association="AlmacenModelo.FK_Detalles_Prenda" />
+        <AssociationConnector Association="AlmacenModelo.FK_DetallesVenta_Ventas" />
+        <AssociationConnector Association="AlmacenModelo.FK_Diseño_Usuario" />
+        <AssociationConnector Association="AlmacenModelo.FK_Prenda_Diseño" />
+        <AssociationConnector Association="AlmacenModelo.FK_Lavanderia_Prenda" />
+        <AssociationConnector Association="AlmacenModelo.FK_Lavanderia_Usuario" />
+        <AssociationConnector Association="AlmacenModelo.FK_Maquila_Prenda" />
+        <AssociationConnector Association="AlmacenModelo.FK_Maquila_Usuario" />
+        <AssociationConnector Association="AlmacenModelo.FK_Prenda_Talla" />
+        <AssociationConnector Association="AlmacenModelo.FK_Usuario_Permiso" />
+        <AssociationConnector Association="AlmacenModelo.FK_Terminado_Prenda" />
+        <AssociationConnector Association="AlmacenModelo.FK_TermiandoBodega_Terminado" />
+        <AssociationConnector Association="AlmacenModelo.FK_Terminado_Usuario" />
+        <AssociationConnector Association="AlmacenModelo.FK_Venta_Usuario" />
+        <AssociationConnector Association="AlmacenModelo.FK_Venta_Vendedor" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
